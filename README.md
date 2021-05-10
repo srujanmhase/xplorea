@@ -8,7 +8,10 @@ If you like what you see, you can get in touch with me srujanmhase5@gmail.com
 
 #### Screenshots
 
-![image info](screenshots/one.JPG)\
-![image info](screenshots/two.JPG)\
-![image info](screenshots/three.JPG)\
-![image info](screenshots/four.JPG)\
+![image info](screenshots/one.jpg)
+
+![image info](screenshots/two.jpg)
+
+![image info](screenshots/three.jpg)
+
+![image info](screenshots/four.jpg)
