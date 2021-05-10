@@ -261,51 +261,68 @@ class infoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 100,
-      child: Column(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(backgroundImage: AssetImage(useravatar)),
-              SizedBox(
-                width: 10,
-              ),
-              Column(
-                children: [
-                  Text(
-                    name,
-                    style: TextStyle(color: Colors.white, fontSize: 17),
-                  ),
-                  Text(
-                    username,
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Icon(
-                Icons.person_add_alt,
-                color: Colors.white,
-              )
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Text(
-                content,
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-            ],
-          ),
-        ],
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => profilePage(name, username, useravatar)));
+      },
+      child: Container(
+        width: 300,
+        height: 100,
+        child: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Hero(
+                  tag: 'useravatarTag',
+                  child: CircleAvatar(backgroundImage: AssetImage(useravatar)),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  children: [
+                    Hero(
+                      tag: 'nameTag',
+                      child: Text(
+                        name,
+                        style: TextStyle(color: Colors.white, fontSize: 17),
+                      ),
+                    ),
+                    Hero(
+                      tag: 'usernameTag',
+                      child: Text(
+                        username,
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Icon(
+                  Icons.person_add_alt,
+                  color: Colors.white,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Text(
+                  content,
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -369,169 +386,392 @@ class _mainHomeState extends State<mainHome> {
                     )
                   ],
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 5, 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            "Hello",
-                            style: TextStyle(fontSize: 17),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("Ron Keys", style: TextStyle(fontSize: 30)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("@ronkeys", style: TextStyle(fontSize: 17)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("Professional Photographer",
-                              style: TextStyle(fontSize: 17)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.location_on),
-                              SizedBox(
-                                width: 7,
-                              ),
-                              Text("Dublin, Ireland",
-                                  style: TextStyle(fontSize: 15))
-                            ],
-                          )
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CircleAvatar(
-                            backgroundImage:
-                                AssetImage('assets/persone_one.jpg'),
-                            radius: 45,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Text(
-                                    '23',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                  Text(
-                                    'Following',
-                                    style: TextStyle(fontSize: 12),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Column(
-                                children: [
-                                  Text(
-                                    '1,556',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                  Text(
-                                    'Followers',
-                                    style: TextStyle(fontSize: 12),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                width: 10,
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "Your Uploads",
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          IconButton(
-                            icon: Icon(Icons.add_a_photo),
-                            onPressed: () {},
-                          )
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Image.asset(
-                            'assets/india_two.jpg',
-                            width: MediaQuery.of(context).size.width * 0.4,
-                          ),
-                          Image.asset(
-                            'assets/ice_three.jpg',
-                            width: MediaQuery.of(context).size.width * 0.4,
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Image.asset(
-                            'assets/forest_two.jpg',
-                            width: MediaQuery.of(context).size.width * 0.4,
-                          ),
-                          Image.asset('assets/desert_three.jpg',
-                              width: MediaQuery.of(context).size.width * 0.4)
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Image.asset(
-                            'assets/ice_two.jpg',
-                            width: MediaQuery.of(context).size.width * 0.4,
-                          ),
-                          Image.asset('assets/desert_two.jpg',
-                              width: MediaQuery.of(context).size.width * 0.4)
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      )
-                    ],
-                  ),
-                )
+                yprofilePage()
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class yprofilePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.fromLTRB(20, 0, 5, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Hello",
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("Ron Keys", style: TextStyle(fontSize: 30)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("@ronkeys", style: TextStyle(fontSize: 17)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("Professional Photographer",
+                      style: TextStyle(fontSize: 17)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.location_on),
+                      SizedBox(
+                        width: 7,
+                      ),
+                      Text("Dublin, Ireland", style: TextStyle(fontSize: 15))
+                    ],
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/persone_one.jpg'),
+                    radius: 45,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            '23',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          Text(
+                            'Following',
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            '1,556',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          Text(
+                            'Followers',
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 10,
+                      )
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Your Uploads",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.add_a_photo),
+                    onPressed: () {},
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    'assets/india_two.jpg',
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
+                  Image.asset(
+                    'assets/ice_three.jpg',
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    'assets/forest_two.jpg',
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
+                  Image.asset('assets/desert_three.jpg',
+                      width: MediaQuery.of(context).size.width * 0.4)
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    'assets/ice_two.jpg',
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
+                  Image.asset('assets/desert_two.jpg',
+                      width: MediaQuery.of(context).size.width * 0.4)
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              )
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class profilePage extends StatefulWidget {
+  profilePage(this.name, this.username, this.useravatar);
+  String name;
+  String username;
+  String useravatar;
+
+  @override
+  _profilePageState createState() => _profilePageState();
+}
+
+class _profilePageState extends State<profilePage> {
+  bool isFollowing = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              BackButton(),
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 5, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Hero(
+                          tag: 'nameTag',
+                          child:
+                              Text(widget.name, style: TextStyle(fontSize: 30)),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Hero(
+                          tag: 'usernameTag',
+                          child: Text(widget.username,
+                              style: TextStyle(fontSize: 17)),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text("Professional Photographer",
+                            style: TextStyle(fontSize: 17)),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.location_on),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text("Dublin, Ireland",
+                                style: TextStyle(fontSize: 15))
+                          ],
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Hero(
+                          tag: 'useravatarTag',
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage(widget.useravatar),
+                            radius: 45,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  '23',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  'Following',
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  '1,556',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                Text(
+                                  'Followers',
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              width: 10,
+                            )
+                          ],
+                        ),
+                        () {
+                          if (isFollowing) {
+                            return TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isFollowing = false;
+                                  });
+                                },
+                                child: Text("Following"));
+                          } else {
+                            return ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isFollowing = true;
+                                  });
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.grey),
+                                ),
+                                child: Text("Follow"));
+                          }
+                        }(),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Uploads",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset(
+                          'assets/india_two.jpg',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                        ),
+                        Image.asset(
+                          'assets/ice_three.jpg',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset(
+                          'assets/forest_two.jpg',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                        ),
+                        Image.asset('assets/desert_three.jpg',
+                            width: MediaQuery.of(context).size.width * 0.4)
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset(
+                          'assets/ice_two.jpg',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                        ),
+                        Image.asset('assets/desert_two.jpg',
+                            width: MediaQuery.of(context).size.width * 0.4)
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),
