@@ -1,16 +1,14 @@
-# xplorea
+# Xplorea
+A UI mockup for a social media app built entorely in flutter. Includes a profile page, the main vertically scrollable feed, messages and an explore page. 
 
-A new Flutter application.
+If you like what you see, you can get in touch with me srujanmhase5@gmail.com
 
-## Getting Started
+### Working Video
+[![Alt text](https://img.youtube.com/vi/6JT8u3Ge19c/0.jpg)](https://www.youtube.com/watch?v=6JT8u3Ge19c)
 
-This project is a starting point for a Flutter application.
+#### Screenshots
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image info](screenshots/one.JPG)\
+![image info](screenshots/two.JPG)\
+![image info](screenshots/three.JPG)\
+![image info](screenshots/four.JPG)\
