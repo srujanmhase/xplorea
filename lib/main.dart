@@ -163,13 +163,298 @@ class _carouselWidgetState extends State<carouselWidget> {
   Widget build(BuildContext context) {
     return CarouselSlider(
         options: CarouselOptions(
-            height: MediaQuery.of(context).size.height,
-            viewportFraction: 1.0,
-            enlargeCenterPage: false,
-            scrollDirection: Axis.horizontal,
-            autoPlay: false,
-            enableInfiniteScroll: false),
+          height: MediaQuery.of(context).size.height,
+          viewportFraction: 1.0,
+          enlargeCenterPage: false,
+          scrollDirection: Axis.horizontal,
+          autoPlay: false,
+          enableInfiniteScroll: false,
+          initialPage: 1,
+        ),
         items: [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.white,
+            child: ListView(
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                  child: Text(
+                    "Explore",
+                    style: TextStyle(fontSize: 30),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey[200]),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text("Search for people or things"),
+                        Icon(Icons.search)
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "Trending",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          Icon(Icons.trending_up_sharp)
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Greece",
+                            style: TextStyle(fontSize: 17),
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          Text(
+                            "Breakout",
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Egypt",
+                            style: TextStyle(fontSize: 17),
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          Text(
+                            "Breakout",
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Siberia",
+                            style: TextStyle(fontSize: 17),
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          Text(
+                            "Breakout",
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Suggested for you",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                        height: 300,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: GridView.count(
+                          crossAxisCount: 2,
+                          children: [
+                            Image.asset(
+                              'assets/beach_three.jpg',
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            Image.asset(
+                              'assets/beach_two.jpg',
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            Image.asset(
+                              'assets/beach_four.jpg',
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            Container(
+                              height: 200,
+                              width: 200,
+                              color: Colors.orange,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Beaches",
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                        height: 300,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: GridView.count(
+                          crossAxisCount: 2,
+                          children: [
+                            Image.asset(
+                              'assets/ice_three.jpg',
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            Image.asset(
+                              'assets/ice_two.jpg',
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            Image.asset(
+                              'assets/ice_four.jpg',
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            Container(
+                              height: 200,
+                              width: 200,
+                              color: Colors.purple,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Snow",
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Who to follow",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage('assets/person_three.jpg'),
+                                radius: 30,
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Er Kay",
+                                    style: TextStyle(fontSize: 18),
+                                  ),
+                                  Text(
+                                    "@erkayy",
+                                    style: TextStyle(
+                                        fontSize: 17, color: Colors.grey),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          IconButton(
+                              icon: Icon(Icons.person_add), onPressed: () {})
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage('assets/person_five.jpg'),
+                                radius: 30,
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Em Kay",
+                                    style: TextStyle(fontSize: 18),
+                                  ),
+                                  Text(
+                                    "@emkaey",
+                                    style: TextStyle(
+                                        fontSize: 17, color: Colors.grey),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          IconButton(
+                              icon: Icon(Icons.person_add), onPressed: () {})
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
           CarouselSlider(
             options: CarouselOptions(
                 height: MediaQuery.of(context).size.height,
@@ -241,9 +526,191 @@ class _carouselWidgetState extends State<carouselWidget> {
             child: ListView(children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                child: Text(
-                  'Messages',
-                  style: TextStyle(fontSize: 25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Messages',
+                      style: TextStyle(fontSize: 25),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundImage:
+                                  AssetImage('assets/person_four.jpg'),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "John A.",
+                                  style: TextStyle(fontSize: 19),
+                                ),
+                                Text(
+                                  "Hello There",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.grey),
+                          child: Center(
+                            child: Text(
+                              "1",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundImage:
+                                  AssetImage('assets/person_three.jpg'),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Er Kay",
+                                  style: TextStyle(fontSize: 19),
+                                ),
+                                Text(
+                                  "Okay",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.grey),
+                          child: Center(
+                            child: Text(
+                              "1",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundImage:
+                                  AssetImage('assets/person_two.jpg'),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Em Bee",
+                                  style: TextStyle(fontSize: 19),
+                                ),
+                                Text(
+                                  "Understood",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.grey),
+                          child: Center(
+                            child: Text(
+                              "1",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundImage:
+                                  AssetImage('assets/person_five.jpg'),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Adam R.",
+                                  style: TextStyle(fontSize: 19),
+                                ),
+                                Text(
+                                  "We've been there",
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
             ]),
